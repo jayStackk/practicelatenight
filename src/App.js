@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+
 import './App.css';
+import PokemonPage from './Components/AnimePage';
+import NewProject from './Components/NewProject/NewProject';
+import { BrowserRouter, Route, Routes} from 'react-router-dom';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    {/* <PokemonPage/> */}
+
+    <Routes>
+    <Route path ='/' element={<PokemonPage />}/>
+    <Route path ='/profileme' element={<NewProject/>}/>
+    {/* <Route path ='/CreatePage2' element={<CreatePage2/>}/>
+    <Route path ='/ForgotPass' element={<ForgotPass/>}/>
+    <Route path ='/CreateAccount' element={<CreateAccount/>}/>
+    <Route path ='/ProfileModal' element={<ProfileEditModal/>}/>
+    <Route path='/friends' element={<ProfileFriend />}/>
+    <Route path='/MainFeedComponent' element={<MainFeedComponent />}/> */}
+
+    </Routes>
+    
+    </BrowserRouter>
+   
   );
 }
 
